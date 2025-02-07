@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulma Navbar with Burger Menu</title>
+    <!-- Bulma CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <!-- Optional: Add some custom styling (for clarity) -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .custom-navbar {
+        background-color: #3498db; /* Custom blue color */
+        color: white; /* Custom text color */
+      }
+
+      .custom-navbar a.navbar-item {
+        color: white; /* Custom text color for links */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar is-primary ">
+      <div class="navbar-brand custom-navbar">
+        <a class="navbar-item" href="#">
+          <strong>MyWebsite</strong>
+        </a>
+
+        <!-- Burger Icon (Only shown on mobile) -->
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <!-- Navbar Menu -->
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#">Home</a>
+          <a class="navbar-item" href="#">About</a>
+          <a class="navbar-item" href="#">Services</a>
+          <a class="navbar-item" href="#">Contact</a>
+        </div>
+
+        <div class="navbar-end">
+          <a class="navbar-item" href="#">Login</a>
+          <a class="navbar-item" href="#">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Welcome to My Website!</h1>
+        <p>This is a simple Bulma navbar example with a working burger menu.</p>
+      </div>
+    </section>
+
+    <!-- JavaScript to make the burger menu work -->
+    <script>
+      // Get the burger element and the menu
+      const burger = document.querySelector(".navbar-burger");
+      const menu = document.getElementById("navbarBasicExample");
+
+      // Add a click event to toggle the menu visibility
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("is-active");
+        burger.classList.toggle("is-active");
+      });
+    </script>
+  </body>
+</html>
